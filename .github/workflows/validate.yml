@@ -1,0 +1,10 @@
+name: Validar Script
+on: [push] # Se activa cada vez que subes algo
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Descarga tu código
+      - name: Run ShellCheck
+        run: shellcheck script.sh # Revisa el archivo
